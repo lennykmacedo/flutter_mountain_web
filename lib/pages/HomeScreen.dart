@@ -44,7 +44,10 @@ class _HomeScreenState extends State<HomeScreen>
     size == 'large' ? celular = false : celular = true;
 
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Color(0xFFFF2779),
+        elevation: 0,
+      ),
       drawer: (celular
           ? Drawer(
               child: Column(
