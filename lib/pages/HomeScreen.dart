@@ -46,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen>
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFFFF2779),
-        elevation: 0,
+        elevation: 1,
       ),
       drawer: (celular
           ? Drawer(
