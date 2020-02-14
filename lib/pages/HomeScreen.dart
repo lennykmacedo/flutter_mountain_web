@@ -15,6 +15,7 @@ class _HomeScreenState extends State<HomeScreen>
   String fundo = "assets/images/2827402.jpg";
   AnimationController animationController;
   Animation animation;
+  bool celular;
 
   @override
   void initState() {
@@ -38,7 +39,22 @@ class _HomeScreenState extends State<HomeScreen>
   @override
   Widget build(BuildContext context) {
     size = getSize(context);
+    print(size);
+
+    size == 'large' ? celular = false : celular = true;
+
     return Scaffold(
+      appBar: AppBar(),
+      drawer: (celular
+          ? Drawer(
+              child: Column(
+                children: <Widget>[
+                  Text('a'),
+                  Text('b'),
+                ],
+              ),
+            )
+          : null),
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
@@ -53,83 +69,7 @@ class _HomeScreenState extends State<HomeScreen>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(
-                    "Logo",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: "Merriweather",
-                        fontWeight: FontWeight.bold,
-                        fontSize: 24),
-                  ),
-                  Row(
-                    children: <Widget>[
-                      HandCursor(
-                        child: Text(
-                          "Home",
-                          style: menuStyle,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 80),
-                        child: HandCursor(
-                          child: Text(
-                            "Travels",
-                            style: menuStyle,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 80),
-                        child: HandCursor(
-                          child: Text(
-                            "Stories",
-                            style: menuStyle,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 80),
-                        child: HandCursor(
-                          child: Text(
-                            "Inspiration",
-                            style: menuStyle,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 80),
-                        child: HandCursor(
-                          child: Text(
-                            "Contacts",
-                            style: menuStyle,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 80),
-                        child: HandCursor(
-                          child: OutlineButton(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            color: Colors.transparent,
-                            borderSide:
-                                BorderSide(color: Colors.white, width: 3),
-                            child: Text(
-                              "Join",
-                              style: menuStyle,
-                            ),
-                            onPressed: () {},
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ],
-              ),
+              (!celular ? buildOptions() : Container()),
               Expanded(
                 child: PageView(
                   onPageChanged: (index) {
@@ -154,6 +94,85 @@ class _HomeScreenState extends State<HomeScreen>
     } else {
       print('ntem');
     }
+  }
+
+  Widget buildOptions() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
+        Text(
+          "Logo",
+          style: TextStyle(
+              color: Colors.white,
+              fontFamily: "Merriweather",
+              fontWeight: FontWeight.bold,
+              fontSize: 24),
+        ),
+        Row(
+          children: <Widget>[
+            HandCursor(
+              child: Text(
+                "Home",
+                style: menuStyle,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 80),
+              child: HandCursor(
+                child: Text(
+                  "Travels",
+                  style: menuStyle,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 80),
+              child: HandCursor(
+                child: Text(
+                  "Stories",
+                  style: menuStyle,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 80),
+              child: HandCursor(
+                child: Text(
+                  "Inspiration",
+                  style: menuStyle,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 80),
+              child: HandCursor(
+                child: Text(
+                  "Contacts",
+                  style: menuStyle,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 80),
+              child: HandCursor(
+                child: OutlineButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  color: Colors.transparent,
+                  borderSide: BorderSide(color: Colors.white, width: 3),
+                  child: Text(
+                    "Join",
+                    style: menuStyle,
+                  ),
+                  onPressed: () {},
+                ),
+              ),
+            )
+          ],
+        ),
+      ],
+    );
   }
 
   Widget page1() {
