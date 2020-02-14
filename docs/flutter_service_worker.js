@@ -1,9 +1,11 @@
 'use strict';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "/assets\AssetManifest.json": "b63aeded37a1e0b88cedf48992b2b1f0",
+  "/assets\AssetManifest.json": "0cd24d74b6a90612298e7b22a5e7d8e2",
+"/assets\assets\images\2827402.jpg": "e88af1391a3ee77ce59a9615970607df",
 "/assets\assets\images\background_computer.jpg": "7f8959612706609b1b7754d1fc3005e4",
 "/assets\assets\images\background_mobile.jpg": "03940cf803946be13b9f3cf7e2b7f713",
+"/assets\assets\images\background_night.jpg": "158bcdd55c37eae3b2da9ec10750b05d",
 "/assets\FontManifest.json": "b77d8a411faac56ea7a1937ad761563d",
 "/assets\fonts\MaterialIcons-Regular.ttf": "56d3ffdef7a25659eab6a68a3fbfaf16",
 "/assets\fonts\Merriweather-Bold.ttf": "9ccb885c9cf8e503d557f15e0b2cbf24",
@@ -13,8 +15,8 @@ const RESOURCES = {
 "/assets\packages\cupertino_icons\assets\CupertinoIcons.ttf": "115e937bb829a890521f72d2e664b632",
 "/icons\Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "/icons\Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-"/index.html": "a09a75756f462834be68aba890cfbb1e",
-"/main.dart.js": "3ee51e258bd9dfaec4f6682eca19141d",
+"/index.html": "2360579a07fb8c6fa0bce0f2b067bc5a",
+"/main.dart.js": "c18a2815ce2a961b8a57acf0e7c53f29",
 "/manifest.json": "db70d29c0e8a6ce83e514cf428855553"
 };
 
